@@ -1,0 +1,46 @@
+<!-- employees/templates/employees/dashboard.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Dashboard</h2>
+
+  <!-- Button to add a new employee -->
+  <a href="{% url 'create_employee' %}" class="btn btn-primary">Add Employee</a>
+
+  <h3>Total Employees: {{ total_employees }}</h3>
+  <h3>Employees on Leave: {{ employees_on_leave }}</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Date of Joining</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Address</th>
+        <th>Leaves Taken</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for employee in employees %}
+        <tr>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.dob }}</td>
+          <td>{{ employee.date_of_joining }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.address }}</td>
+          <td>{{ employee.leaves_taken }}</td>
+          <td>{{ employee.on_leave }}</td>
+          <td>
+            <a href="{% url 'edit_employee' employee.id %}">Edit</a> | 
+            <a href="{% url 'delete_employee' employee.id %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
