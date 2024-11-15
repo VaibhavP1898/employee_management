@@ -23,11 +23,12 @@ TEMP_DIR=os.path.join(BASE_DIR,'Templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-q0o=*1gvtvcsgeqgtq6#v!j7c5s7d821k1(tvu#a32joi1$)mv'
 
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['employee-management-kq28.onrender.com','127.0.0.1' ]
-
+ALLOWED_HOSTS = ['employee-management-kq28.onrender.com', '127.0.0.1']
 
 # Application definition
 
